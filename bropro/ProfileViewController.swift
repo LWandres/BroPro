@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
@@ -54,7 +54,7 @@ class ProfileViewController: UIViewController {
         
         //send user data to server side
         
-        let myUrl = NSURL(string: "http://localhost:3000/tasks/update_profile")
+        let myUrl = NSURL(string: "http://52.36.8.146/tasks/update_profile")
         let request = NSMutableURLRequest(URL:myUrl!)
         request.HTTPMethod = "POST"
         
@@ -110,7 +110,16 @@ class ProfileViewController: UIViewController {
         task.resume()
 
         
-        
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
         
         

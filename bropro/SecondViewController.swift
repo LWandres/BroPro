@@ -36,6 +36,11 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,7 +102,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
         
-        let myUrl = NSURL(string: "http://localhost:3000/swolcontrols/add_workout")
+        let myUrl = NSURL(string: "http://52.36.8.146/swolcontrols/add_workout")
         let request = NSMutableURLRequest(URL:myUrl!)
         request.HTTPMethod = "POST"
         var intensity_id: String
@@ -216,7 +221,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let height = NSUserDefaults.standardUserDefaults().stringForKey("height")
         let gender = NSUserDefaults.standardUserDefaults().stringForKey("gender")
         let intensity = NSUserDefaults.standardUserDefaults().stringForKey("intensity")
-        let myUrl2 = NSURL(string: "http://localhost:3000/swolcontrols/add_workout_foreal")
+        let myUrl2 = NSURL(string: "http://52.36.8.146/swolcontrols/add_workout_foreal")
         let request2 = NSMutableURLRequest(URL:myUrl2!)
         request2.HTTPMethod = "POST"
         let totalburn = self.burnTextField.text!
@@ -278,7 +283,7 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func viewDidAppear(animated: Bool) {
         let user_id = NSUserDefaults.standardUserDefaults().stringForKey("userID")
         
-        let myUrl = NSURL(string: "http://localhost:3000/swolcontrols/todays_burn")
+        let myUrl = NSURL(string: "http://52.36.8.146/swolcontrols/todays_burn")
         let request = NSMutableURLRequest(URL:myUrl!)
         request.HTTPMethod = "POST"
         

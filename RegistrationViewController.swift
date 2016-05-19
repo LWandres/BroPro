@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, UITextFieldDelegate {
     var bros: [String] = ["John"]
     
     @IBOutlet weak var userEmailTextField: UITextField!
@@ -74,7 +74,7 @@ class RegistrationViewController: UIViewController {
         
         //send user data to server side
         
-        let myUrl = NSURL(string: "http://localhost:3000/tasks/add_user")
+        let myUrl = NSURL(string: "http://52.36.8.146/tasks/add_user")
         let request = NSMutableURLRequest(URL:myUrl!)
         request.HTTPMethod = "POST"
         let postString = "email=\(userEmail!)&password=\(userPassword!)&height=\(height!)&weight=\(weight!)&gender=\(gender!)&age=\(age!)"
@@ -122,7 +122,6 @@ class RegistrationViewController: UIViewController {
                             self.presentViewController(alert, animated:true, completion:nil)
                             })
                     
-
                     }
                 
            
@@ -137,7 +136,20 @@ class RegistrationViewController: UIViewController {
 
      
     }
-
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+        userEmailTextField.resignFirstResponder()
+        userPasswordTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
     @IBAction func backToLogin(sender: UIButton) {
         dismissViewControllerAnimated(true, completion:nil)
     }

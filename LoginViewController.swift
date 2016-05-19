@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBOutlet weak var userEmailTextField: UITextField!
@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(sender: UIButton) {
         let userPassword = userPasswordTextField.text
         let userEmail = userEmailTextField.text
-        let myURL = NSURL(string: "http://localhost:3000/tasks/get_bro_by_email")
+        let myURL = NSURL(string: "http://52.36.8.146/tasks/get_bro_by_email")
         let request = NSMutableURLRequest(URL:myURL!)
         request.HTTPMethod = "POST"
         let postString = "email=\(userEmail!)&password=\(userPassword!)"
@@ -81,6 +81,17 @@ class LoginViewController: UIViewController {
         task.resume()
 //        get_all_bros()
         
+        func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+            view.endEditing(true)
+            super.touchesBegan(touches, withEvent: event)
+            userEmailTextField.resignFirstResponder()
+            userPasswordTextField.resignFirstResponder()
+        }
+        
+        func textFieldShouldReturn(textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
                     
                     
 //                    if let newid = jsonResult["id"] {
@@ -132,7 +143,7 @@ class LoginViewController: UIViewController {
     }
     
     func get_all_bros(){
-        let url = NSURL(string: "http://localhost:3000/tasks/get_all_bros")
+        let url = NSURL(string: "http://52.36.8.146/tasks/get_all_bros")
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!, completionHandler: {
             data, response, error in

@@ -9,14 +9,14 @@
 import Foundation
 class bropromodel {
     static func getAllBros(completionHandler: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) {
-        let url = NSURL(string: "http://localhost:3000/tasks/get_all_bros")
+        let url = NSURL(string: "http://52.36.8.146/tasks/get_all_bros")
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!, completionHandler: completionHandler)
         task.resume()
         }
     
     static func add_user_email (completionHandler: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) {
-            let url = NSURL(string: "http://localhost:3000/tasks/add_user_email")
+            let url = NSURL(string: "http://52.36.8.146/tasks/add_user_email")
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithURL(url!, completionHandler: completionHandler)
             task.resume()

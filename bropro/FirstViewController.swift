@@ -85,6 +85,10 @@ class FirstViewController: UIViewController {
             self.performSegueWithIdentifier("loginView", sender: self)
         }
     }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 
 
     @IBAction func logoutButtonTapped(sender: UIButton) {
@@ -112,7 +116,7 @@ class FirstViewController: UIViewController {
         
         
         let user_id = NSUserDefaults.standardUserDefaults().stringForKey("userID")
-        let myUrl = NSURL(string: "http://localhost:3000/brofoods/add_meal")
+        let myUrl = NSURL(string: "http://52.36.8.146/brofoods/add_meal")
         let request = NSMutableURLRequest(URL:myUrl!)
         request.HTTPMethod = "POST"
         var food_id:Int
