@@ -15,6 +15,10 @@
 		95590C501CEB9BE30009E5CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95590C4E1CEB9BE30009E5CD /* LaunchScreen.storyboard */; };
 		95590C5B1CEB9BE30009E5CD /* broproTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95590C5A1CEB9BE30009E5CD /* broproTests.swift */; };
 		95590C661CEB9BE30009E5CD /* broproUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95590C651CEB9BE30009E5CD /* broproUITests.swift */; };
+		95590C781CEBBB050009E5CD /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95590C771CEBBB050009E5CD /* RegistrationViewController.swift */; };
+		95590C7A1CEBCCB80009E5CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95590C791CEBCCB80009E5CD /* LoginViewController.swift */; };
+		95590C7C1CEC09D60009E5CD /* bropromodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95590C7B1CEC09D60009E5CD /* bropromodel.swift */; };
+		95B062771CEDD55E00CA1A25 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B062761CEDD55E00CA1A25 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		95590C611CEB9BE30009E5CD /* broproUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = broproUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95590C651CEB9BE30009E5CD /* broproUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = broproUITests.swift; sourceTree = "<group>"; };
 		95590C671CEB9BE30009E5CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95590C771CEBBB050009E5CD /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = ../RegistrationViewController.swift; sourceTree = "<group>"; };
+		95590C791CEBCCB80009E5CD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		95590C7B1CEC09D60009E5CD /* bropromodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bropromodel.swift; sourceTree = "<group>"; };
+		95B062761CEDD55E00CA1A25 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,9 @@
 		95590C421CEB9BE20009E5CD /* bropro */ = {
 			isa = PBXGroup;
 			children = (
+				95590C791CEBCCB80009E5CD /* LoginViewController.swift */,
+				95590C771CEBBB050009E5CD /* RegistrationViewController.swift */,
+				95590C7B1CEC09D60009E5CD /* bropromodel.swift */,
 				95590C431CEB9BE20009E5CD /* AppDelegate.swift */,
 				95590C451CEB9BE20009E5CD /* FirstViewController.swift */,
 				95590C471CEB9BE20009E5CD /* SecondViewController.swift */,
@@ -106,6 +117,7 @@
 				95590C4C1CEB9BE30009E5CD /* Assets.xcassets */,
 				95590C4E1CEB9BE30009E5CD /* LaunchScreen.storyboard */,
 				95590C511CEB9BE30009E5CD /* Info.plist */,
+				95B062761CEDD55E00CA1A25 /* ProfileViewController.swift */,
 			);
 			path = bropro;
 			sourceTree = "<group>";
@@ -196,7 +208,7 @@
 				TargetAttributes = {
 					95590C3F1CEB9BE20009E5CD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 93DU6VN4H3;
+						DevelopmentTeam = 3J7PYX3KWD;
 					};
 					95590C551CEB9BE30009E5CD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -263,7 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				95590C481CEB9BE20009E5CD /* SecondViewController.swift in Sources */,
+				95590C7C1CEC09D60009E5CD /* bropromodel.swift in Sources */,
 				95590C441CEB9BE20009E5CD /* AppDelegate.swift in Sources */,
+				95590C781CEBBB050009E5CD /* RegistrationViewController.swift in Sources */,
+				95B062771CEDD55E00CA1A25 /* ProfileViewController.swift in Sources */,
+				95590C7A1CEBCCB80009E5CD /* LoginViewController.swift in Sources */,
 				95590C461CEB9BE20009E5CD /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,10 +424,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bropro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codingdojo.bropro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.laura.bropro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -419,10 +438,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bropro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codingdojo.bropro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.laura.bropro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -491,6 +513,7 @@
 				95590C6C1CEB9BE30009E5CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95590C6D1CEB9BE30009E5CD /* Build configuration list for PBXNativeTarget "broproTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +522,7 @@
 				95590C6F1CEB9BE30009E5CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95590C701CEB9BE30009E5CD /* Build configuration list for PBXNativeTarget "broproUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +531,7 @@
 				95590C721CEB9BE30009E5CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
